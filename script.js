@@ -4,7 +4,7 @@ var searchButton = document.getElementById("searchbtn");
 function getApi(event) {
     event.preventDefault();
     var requestUrl ="https://api.openweathermap.org/data/2.5/weather?q=" + citySearch.value + "&appid=" + apiKey;
-
+    // Fetches information based on input from user.
     fetch(requestUrl) 
         .then(function (response) {
             return response.json();
@@ -12,6 +12,7 @@ function getApi(event) {
             })
             .then(function(data) {
                 console.log(data)
+                // Creates content in the HTML based on data from the object created by JSON.
                 var currentTemp = data.main.temp;
                 var currentWind = data.wind.speed;
                 var currentHumidity = data.main.humidity;
@@ -27,8 +28,18 @@ function getApi(event) {
                 cityTitile.innerHTML = cityName
 
             });
+            // Began trying to grab the forescast but didn't have enough time before deadline.
+            let cityId = data.id;
+            let forecastUrl = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityId + "&appid=" + apiKey;
+            fetch(forecastUrl) 
+            .then(function (response) {
+                return response.json();
+    
+                })
+                .then(function(data) {
+                    console.log(data)
+                });
         }
-
 
 
 searchButton.addEventListener("click", getApi);

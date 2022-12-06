@@ -16,13 +16,16 @@
         <div>
             <h4 class="mt-4 ml-2">Search For A City</h4>
         </div>
+        <!-- Form created to allow user to search city. -->
         <form class="ml-1">
             <input class="my-2 text-primary" type="search" placeholder="SEARCH HERE" id="user-city-choice">
             <button class="btn btn-outline-primary my-2" style="width: 7%" style="height: 6%" type="submit" id="searchbtn">Enter</button>
         </form>
     </div>
+    <!-- Intended to utilize local storage. -->
     <div class="border-top border-primary" id="logged-search">
     </div>
+    <!-- Where weather conditions appear. -->
     <div class="column col-9">
         <div class="row" id="weatherCon"></div>
             <h2 id="cityHead"></h2>
@@ -31,6 +34,7 @@
                 <li id="wind"></li>
                 <li id="humidity"></li>
             </ul>
+            <!-- Intended to house five separate cards that dynamically display when city is searched. -->
         <div class="d-flex justify-content-between" id="five-fore"></div>
     </div>
     <script src="./script.js"></script>
